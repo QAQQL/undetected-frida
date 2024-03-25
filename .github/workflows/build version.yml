@@ -12,9 +12,9 @@ jobs:
     - name: Check for existing release
       id: check
       env:
-        FRIDA_VERSION: ${{ secrets.FRIDA_VERSION }}
+        _FRIDA_VERSION: ${{ vars.FRIDA_VERSION }}
       run: |
-        echo "FRIDA_VERSION=${FRIDA_VERSION}" >> "${GITHUB_OUTPUT}"  # gh env?
+        echo "FRIDA_VERSION=${_FRIDA_VERSION}" >> "${GITHUB_OUTPUT}"  # gh env?
 
         release_exists=0
         set +e
